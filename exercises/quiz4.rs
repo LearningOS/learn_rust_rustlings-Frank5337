@@ -5,7 +5,16 @@
 
 // Write a macro that passes the quiz! No hints this time, you can do it!
 
-// I AM NOT DONE
+
+macro_rules! my_macro {
+    ($x:expr) => {
+        {
+        let mut str = String::from("Hello ");
+        str.push_str($x);
+        str
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
@@ -13,6 +22,7 @@ mod tests {
 
     #[test]
     fn test_my_macro_world() {
+        println!("xxx {}",my_macro!("world!"));
         assert_eq!(my_macro!("world!"), "Hello world!");
     }
 
